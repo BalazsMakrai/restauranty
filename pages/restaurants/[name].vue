@@ -1,5 +1,14 @@
 <template>
     <div>
+        <Html lang="hu-HU">
+
+        <Head>
+            <Title>{{ restaurant?.name }}</Title>
+            <Meta name="description" content="My page is cool" />
+            <Link rel="preload" href="https://cdn-icons-png.flaticon.com/512/3585/3585640.png" as="script" />
+        </Head>
+
+        </Html>
         <NuxtLayout name="custom" v-if="restaurant">
             <div class="restaurant-container">
                 <div class="image-container">
