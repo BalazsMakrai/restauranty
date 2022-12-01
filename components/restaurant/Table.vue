@@ -3,10 +3,14 @@
         <h1>TOP 50: THE RANKING</h1>
         <div class="table-container">
             <div class="table-col">
-                <RestaurantRow v-for="restaurant in restaurantsOrganized.first" :key="restaurant.id" />
+                <RestaurantRow :isHeader=true />
+                <RestaurantRow v-for="(restaurant, index) in restaurantsOrganized.first" :key="restaurant.id"
+                    :name="restaurant.name" :rank="restaurant.rank" :index="index" />
             </div>
             <div class="table-col">
-                <RestaurantRow v-for="restaurant in restaurantsOrganized.second" :key="restaurant.id" />
+                <RestaurantRow :isHeader=true />
+                <RestaurantRow v-for="(restaurant, index) in restaurantsOrganized.second" :key="restaurant.id"
+                    :name="restaurant.name" :rank="restaurant.rank" :index="index" />
             </div>
         </div>
     </div>
