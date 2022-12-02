@@ -3,7 +3,7 @@
         <Html lang="hu-HU">
 
         <Head>
-            <Title>{{ restaurant?.name }}</Title>
+            <Title>{{ title }}</Title>
             <Meta name="description" content="My page is cool" />
             <Link rel="preload" href="https://cdn-icons-png.flaticon.com/512/3585/3585640.png" as="script" />
         </Head>
@@ -36,10 +36,14 @@
 
 <script setup lang="ts">
 import restaurants from '@/data.json';
-
 const route = useRoute();
 const name = route.params.name;
 const restaurant = restaurants.find(r => r.name === name);
+const title = ref(name);
+if (!restaurant) {
+    title.value = 'Restaurant not found';
+}
+
 </script>
 
 <style scoped>
